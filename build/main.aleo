@@ -59,6 +59,15 @@ function transfer_private:
     output r5 as token.record;
 
 
+function transfer_all_private:
+    input r0 as token.record;
+    input r1 as address.private;
+    cast r0.owner 0u64 into r2 as token.record;
+    cast r1 r0.amount into r3 as token.record;
+    output r2 as token.record;
+    output r3 as token.record;
+
+
 function transfer_private_to_public:
     input r0 as token.record;
     input r1 as address.public;
